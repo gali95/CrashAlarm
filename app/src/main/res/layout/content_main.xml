@@ -70,6 +70,7 @@
             android:layout_height="match_parent"
             android:ems="10"
             android:inputType="phone"
+            android:text="507969907"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="135dp" />
 
@@ -113,13 +114,21 @@
             android:layout_height="match_parent"
             android:ems="10"
             android:inputType="textPersonName"
-            android:singleLine="false" />
+            android:singleLine="false"
+            android:text="siema haniu smieszny jestem" />
 
         <Button
             android:id="@+id/ButtonTest"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Test Sound and Vibration" />
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:text="STOP" />
 
 </LinearLayout>
 

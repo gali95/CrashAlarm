@@ -28,7 +28,7 @@ public class AlarmWaiter implements Runnable{
             timeActual = timeStart;
             while (timeActual > 0) {
                 Thread.sleep(waitStep);
-                timeActual -= waitStep;
+                timeActual -= (double)waitStep/1000;
                 if (abort) {
                     abortSMS = true;
                     break;

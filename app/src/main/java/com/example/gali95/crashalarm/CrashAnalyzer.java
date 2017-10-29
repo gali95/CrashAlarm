@@ -42,6 +42,7 @@ public class CrashAnalyzer implements SensorEventListener {
         this.owner = owner;
         paused = true;
         InitSensor();
+        InitSound();
     }
 
     private float rawToNormalized(float entry)
@@ -124,7 +125,7 @@ public class CrashAnalyzer implements SensorEventListener {
         SendSMS(SMSNumber,SMSMessage);
     }
 
-    private void ActivateAlarm(double tiem)
+    public void ActivateAlarm(double tiem)
     {
         if(actualAlarm != null) return;
 
@@ -144,6 +145,7 @@ public class CrashAnalyzer implements SensorEventListener {
         if(actualAlarm == null) return;
 
         actualAlarm.Abort();
+        actualAlarm = null;
     }
 
     @Override

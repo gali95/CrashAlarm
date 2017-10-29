@@ -11,6 +11,7 @@ import android.hardware.TriggerEvent;
 import android.hardware.TriggerEventListener;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,10 +20,16 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
     private CrashAnalyzer ca;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS =0;
     private boolean hasSmsPermission;
+    private MainActivity t;
+    private CheckBox rb;
+    private EditText phoneNum,messageText,alarmDuration;
+    private Button stop;
 
 
     @Override
@@ -40,6 +51,81 @@ public class MainActivity extends AppCompatActivity {
 
         RequestSMSPermission();
         ca = new CrashAnalyzer(this);
+        t = this;
+
+        rb = (CheckBox) findViewById(R.id.OnOff);
+        phoneNum = (EditText) findViewById(R.id.PhoneNumber);
+        messageText = (EditText) findViewById(R.id.MessagePlainText);
+        alarmDuration = (EditText) findViewById(R.id.TimeBeforeSendingMessagePlainText);
+        stop = (Button) findViewById(R.id.stopButton);
+
+        rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ca.SetPaused(!rb.isChecked());
+
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view) {
+                ca.DeactivateAlarm();
+            }
+        });
+
+        phoneNum.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                ca.setSMSNumber(phoneNum.getText().toString());
+            }
+        });
+
+        messageText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                ca.setSMSMessage(messageText.getText().toString());
+            }
+        });
+
+        alarmDuration.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                ca.setAlarmDuration(Integer.parseInt(alarmDuration.getText().toString()));
+            }
+        });
 
 
 
