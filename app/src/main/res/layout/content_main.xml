@@ -8,13 +8,12 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
 
-        <RadioButton
+        <CheckBox
             android:id="@+id/OnOff"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="On"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="3dp" />
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Off" />
 
         <TextView
             android:id="@+id/SensibilityText"
@@ -78,16 +77,17 @@
             android:id="@+id/TimeBeforeSendingMessageText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Time Before Sending Message:"
+            android:text="Time Before Sending Message[s]:"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="155dp" />
 
-        <Spinner
-            android:id="@+id/TimeBeforeSendingMessageSpinner"
+        <EditText
+            android:id="@+id/TimeBeforeSendingMessagePlainText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="175dp" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberSigned"
+            android:text="10" />
 
         <TextView
             android:id="@+id/ChosenTrack"
