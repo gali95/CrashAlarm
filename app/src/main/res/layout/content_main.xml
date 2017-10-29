@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:layout_behavior="fill"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
 
@@ -67,7 +66,7 @@
             tools:layout_editor_absoluteY="114dp" />
 
         <EditText
-            android:id="@+id/ PhoneNumber"
+            android:id="@+id/PhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:ems="10"
