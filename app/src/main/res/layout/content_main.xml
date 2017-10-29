@@ -1,55 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.gali95.crashalarm.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_behavior="fill"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A moze nie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="A moze nie" />
+        <RadioButton
+            android:id="@+id/OnOff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="On"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="3dp" />
 
-    <ProgressBar
-        android:id="@+id/xRotPB"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="385dp"
-        android:layout_height="98dp"
-        app:layout_constraintBottom_toTopOf="@+id/yRotPB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/SensibilityText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sensibility"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="554dp" />
 
-    <ProgressBar
-        android:id="@+id/yRotPB"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="321dp"
-        android:layout_height="82dp"
-        android:layout_marginEnd="38dp"
-        android:indeterminate="false"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/xRotPB" />
+        <SeekBar
+            android:id="@+id/SensibilitySeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    <ProgressBar
-        android:id="@+id/zRotPB"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp"
-        android:layout_height="79dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yRotPB" />
+        <TextView
+            android:id="@+id/VolumeText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Volume:" />
 
-</android.support.constraint.ConstraintLayout>
+        <SeekBar
+            android:id="@+id/VolumeSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <TextView
+            android:id="@+id/VibrationPowerText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Vibration Power:"
+            tools:layout_editor_absoluteX="2dp"
+            tools:layout_editor_absoluteY="74dp" />
+
+        <SeekBar
+            android:id="@+id/VibrationPowerSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="94dp" />
+
+        <TextView
+            android:id="@+id/PhoneNumberText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Phone Number"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="114dp" />
+
+        <EditText
+            android:id="@+id/ PhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="phone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="135dp" />
+
+        <TextView
+            android:id="@+id/TimeBeforeSendingMessageText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Time Before Sending Message:"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="155dp" />
+
+        <Spinner
+            android:id="@+id/TimeBeforeSendingMessageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="175dp" />
+
+        <TextView
+            android:id="@+id/ChosenTrack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="PapieżZawadiaka" />
+
+        <Button
+            android:id="@+id/ButtonChooseTrack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="CHange Sound" />
+
+        <TextView
+            android:id="@+id/MessageText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Message:" />
+
+        <EditText
+            android:id="@+id/MessagePlainText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:singleLine="false" />
+
+        <Button
+            android:id="@+id/ButtonTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Test Sound and Vibration" />
+
+</LinearLayout>
+
+
