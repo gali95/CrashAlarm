@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         phoneNum = (EditText) findViewById(R.id.PhoneNumber);
         messageText = (EditText) findViewById(R.id.MessagePlainText);
         alarmDuration = (EditText) findViewById(R.id.TimeBeforeSendingMessagePlainText);
+
         stop = (Button) findViewById(R.id.stopButton);
 
         rb.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +124,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                ca.setAlarmDuration(Integer.parseInt(alarmDuration.getText().toString()));
+                if( !alarmDuration.getText().toString().equals(""))
+                    ca.setAlarmDuration(Integer.parseInt(alarmDuration.getText().toString()));
             }
         });
 
