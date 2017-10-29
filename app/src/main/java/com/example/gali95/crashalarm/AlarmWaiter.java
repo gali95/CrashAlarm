@@ -38,6 +38,7 @@ public class AlarmWaiter implements Runnable{
             ca.StopSound();
             if (!abortSMS) {
                 ca.SendSMS();
+                ca.DiscardAlarm();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ca.SetPaused(!rb.isChecked());
+                if(ca.GetPaused())
+                {
+                    ca.DeactivateAlarm();
+                }
 
             }
         });

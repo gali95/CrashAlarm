@@ -8,6 +8,8 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.telephony.SmsManager;
 
+import java.io.IOException;
+
 /**
  * Created by gali95 on 29.10.17.
  */
@@ -112,6 +114,7 @@ public class CrashAnalyzer implements SensorEventListener {
     public void StopSound()
     {
         alarmSound.stop();
+        InitSound();
     }
 
     private void SendSMS(String number, String message)
@@ -145,6 +148,11 @@ public class CrashAnalyzer implements SensorEventListener {
         if(actualAlarm == null) return;
 
         actualAlarm.Abort();
+        actualAlarm = null;
+    }
+
+    public void DiscardAlarm()
+    {
         actualAlarm = null;
     }
 
